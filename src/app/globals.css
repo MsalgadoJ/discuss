@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-wave {
+  background-image: url('data:image/svg+xml,%3Csvg viewBox="0 0 500 200" xmlns="http://www.w3.org/2000/svg"%3E%3Cpath d="M 0 50 C 150 150 300 0 500 80 L 500 0 L 0 0" fill="rgb(57, 27, 112)"%3E%3C/path%3E%3Cpath d="M 0 50 C 150 150 330 -30 500 50 L 500 0 L 0 0" fill="%23333381" opacity="0.8"%3E%3C/path%3E%3Cpath d="M 0 50 C 215 150 250 0 500 100 L 500 0 L 0 0" fill="%232C1E4A" opacity="0.5"%3E%3C/path%3E%3C/svg%3E');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: #2c1e4a;
+}

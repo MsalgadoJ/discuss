@@ -11,7 +11,7 @@ import SearchInput from "@/components/search-input";
 
 export default function Header() {
   return (
-    <Navbar className="shadow mb-6">
+    <Navbar className="w-full shadow mb-6">
       <NavbarBrand>
         <Link href="/" className="font-bold">
           Discuss
