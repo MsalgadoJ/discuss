@@ -18,7 +18,7 @@ export default async function TopicShowPage({ params }: TopicShowPageProps) {
   });
 
   return (
-    <div className="flex flex-col-reverse gap-4 p-4 sm:max-w-[600px] mx-auto">
+    <div className="flex flex-col-reverse justify-end gap-4 p-4 sm:max-w-[600px] mx-auto">
       <div className="col-span-3 text-stone-200">
         <ClientAnimation>
           <h1 className="text-2xl font-bold">{slug}</h1>

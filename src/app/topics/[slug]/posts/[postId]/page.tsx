@@ -39,6 +39,7 @@ export default async function PostShowPage({ params }: PostShowPageProps) {
         startOpen={false}
         textColor="text-stone-200"
       />
+      {/* <div className="border border-b-gray-800 mb-2 px-2"></div> */}
       <CommentList postId={postId} />
     </div>
   );
