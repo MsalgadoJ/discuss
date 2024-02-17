@@ -13,7 +13,7 @@ export default function Footer() {
           >
             Mayra Rincones
           </a>{" "}
-          in the scope of Stephen Grider's NextJs course
+          in the scope of Stephen Grider&apos;s NextJs course
         </p>
       </div>
     </ClientAnimation>
