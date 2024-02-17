@@ -18,19 +18,25 @@ export default function TopicCreateForm() {
   });
 
   return (
-    <Popover placement="left">
+    <Popover placement="bottom">
       <PopoverTrigger>
-        <Button color="primary">Create a Topic</Button>
+        <Button color="secondary" className="uppercase mb-2">
+          Create a Topic
+        </Button>
       </PopoverTrigger>
       <PopoverContent>
         <form action={action}>
           <div className="flex flex-col gap-4 p-4 w-80">
-            <h3 className="text-lg">Create a Topic</h3>
+            <h3 className="text-lg uppercase">Create a Topic</h3>
             <Input
               name="name"
               label="Name"
               labelPlacement="outside"
               placeholder="Name"
+              classNames={{
+                label: "text-lg",
+                input: ["text-lg", "placeholder:text-lg "],
+              }}
               isInvalid={!!formState.errors.name}
               errorMessage={formState.errors.name?.join(", ")}
             />
@@ -40,6 +46,10 @@ export default function TopicCreateForm() {
               label="Description"
               labelPlacement="outside"
               placeholder="Describe your topic"
+              classNames={{
+                label: "text-lg",
+                input: ["text-lg", "placeholder:text-lg "],
+              }}
               isInvalid={!!formState.errors.description}
               errorMessage={formState.errors.description?.join(", ")}
             />

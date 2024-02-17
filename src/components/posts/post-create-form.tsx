@@ -25,14 +25,16 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
   );
 
   return (
-    <Popover placement="left">
+    <Popover placement="bottom">
       <PopoverTrigger>
-        <Button color="primary">Create a Post</Button>
+        <Button color="secondary" className="uppercase">
+          Create a Post
+        </Button>
       </PopoverTrigger>
       <PopoverContent>
         <form action={action}>
           <div className="flex flex-col gap-4 p-4 w-80">
-            <h3 className="text-lg">Create a Post</h3>
+            <h3 className="text-lg uppercase">Create a Post</h3>
 
             <Input
               isInvalid={!!formState.errors.title}
@@ -41,6 +43,10 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
               label="Title"
               labelPlacement="outside"
               placeholder="Title"
+              classNames={{
+                label: "text-lg",
+                input: ["text-lg", "placeholder:text-lg "],
+              }}
             />
             <Textarea
               isInvalid={!!formState.errors.content}
@@ -49,6 +55,10 @@ export default function PostCreateForm({ slug }: PostCreateFormProps) {
               label="Content"
               labelPlacement="outside"
               placeholder="Content"
+              classNames={{
+                label: "text-lg",
+                input: ["text-lg", "placeholder:text-lg "],
+              }}
             />
 
             {formState.errors._form ? (

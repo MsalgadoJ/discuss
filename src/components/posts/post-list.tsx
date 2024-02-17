@@ -4,10 +4,18 @@ import paths from "@/paths";
 
 interface PostListProps {
   fetchData: () => Promise<PostWithData[]>;
+  placeholderNoPost: string;
 }
 
-export default async function PostList({ fetchData }: PostListProps) {
+export default async function PostList({
+  fetchData,
+  placeholderNoPost,
+}: PostListProps) {
   const posts = await fetchData();
+
+  if (!posts.length) {
+    return <p className="text-stone-200">{placeholderNoPost}</p>;
+  }
 
   const renderedPosts = posts.map((post) => {
     const topicSlug = post.topic.slug;
@@ -17,12 +25,15 @@ export default async function PostList({ fetchData }: PostListProps) {
     }
 
     return (
-      <div key={post.id} className="border rounded p-2">
+      <div
+        key={post.id}
+        className="bg-stone-200 border-1 border-[#F31260] rounded p-2 transition-transform hover:scale-105"
+      >
         <Link href={paths.postShow(topicSlug, post.id)}>
-          <h3 className="text-lg font-bold">{post.title}</h3>
+          <h3 className="text-lg font-bold text-purple">{post.title}</h3>
           <div className="flex flex-row gap-8">
-            <p className="text-xs text-gray-400">By {post.user.name}</p>
-            <p className="text-xs text-gray-400">
+            <p className="text-xs text-purple">By {post.user.name}</p>
+            <p className="text-xs text-purple">
               {post._count.comments} comments
             </p>
           </div>

@@ -21,7 +21,11 @@ export default function HeaderAuth() {
     authContent = (
       <Popover placement="left">
         <PopoverTrigger>
-          <Avatar src={session.data.user.image || ""} />
+          <Avatar
+            isBordered
+            color="danger"
+            src={session.data.user.image || ""}
+          />
         </PopoverTrigger>
         <PopoverContent>
           <div className="p-4">
@@ -37,7 +41,7 @@ export default function HeaderAuth() {
       <>
         <NavbarItem>
           <form action={actions.signIn}>
-            <Button type="submit" color="secondary" variant="bordered">
+            <Button type="submit" color="secondary" variant="ghost">
               Sign In
             </Button>
           </form>
@@ -45,7 +49,7 @@ export default function HeaderAuth() {
 
         <NavbarItem>
           <form action={actions.signIn}>
-            <Button type="submit" color="primary" variant="flat">
+            <Button type="submit" color="danger" variant="faded">
               Sign Up
             </Button>
           </form>

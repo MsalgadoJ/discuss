@@ -1,10 +1,9 @@
 import type { Metadata } from "next";
-import { Inter, Gruppo } from "next/font/google";
+import { Gruppo } from "next/font/google";
 import "./globals.css";
 import Providers from "@/app/providers";
 import Header from "@/components/header";
 
-// const inter = Gruppo({ subsets: ["latin"] });
 const inter = Gruppo({ weight: "400", subsets: ["latin"] });
 
 export const metadata: Metadata = {

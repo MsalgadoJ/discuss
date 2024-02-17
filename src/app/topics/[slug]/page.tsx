@@ -1,6 +1,8 @@
 import PostCreateForm from "@/components/posts/post-create-form";
 import PostList from "@/components/posts/post-list";
 import { fetchPostsByTopicSlug } from "@/db/queries/posts";
+import ClientAnimation from "@/components/common/client-animation";
+import { db } from "@/db";
 
 interface TopicShowPageProps {
   params: {
@@ -8,18 +10,30 @@ interface TopicShowPageProps {
   };
 }
 
-export default function TopicShowPage({ params }: TopicShowPageProps) {
+export default async function TopicShowPage({ params }: TopicShowPageProps) {
   const { slug } = params;
 
+  const slugInfo = await db.topic.findFirst({
+    where: { slug },
+  });
+
   return (
-    <div className="grid grid-cols-4 gap-4 p-4">
-      <div className="col-span-3">
-        <h1 className="text-2xl font-bold mb-2">{slug}</h1>
-        <PostList fetchData={() => fetchPostsByTopicSlug(slug)} />
+    <div className="flex flex-col-reverse gap-4 p-4 sm:max-w-[600px] mx-auto">
+      <div className="col-span-3 text-stone-200">
+        <ClientAnimation>
+          <h1 className="text-2xl font-bold">{slug}</h1>
+          <p className="mb-4 ">{slugInfo?.description ?? ""}</p>
+          <PostList
+            placeholderNoPost="Go ahead and write the first post 😃"
+            fetchData={() => fetchPostsByTopicSlug(slug)}
+          />
+        </ClientAnimation>
       </div>
 
-      <div>
-        <PostCreateForm slug={slug} />
+      <div className="self-end">
+        <ClientAnimation>
+          <PostCreateForm slug={slug} />
+        </ClientAnimation>
       </div>
     </div>
   );
