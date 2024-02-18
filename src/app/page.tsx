@@ -15,7 +15,7 @@ export default function Home() {
         </ClientAnimation>
       </div>
       <ClientAnimation>
-        <div className="max-w-[500px] bg-stone-200 border-1 border-[#F31260] shadow py-5 px-2 rounded">
+        <div className="min-w-[300px] max-w-[500px] bg-stone-200 border-1 border-[#F31260] shadow py-5 px-2 rounded">
           <TopicCreateForm />
           <Divider className="my-2" />
           <h3 className="text-xl text-purple font-extrabold my-2">Topics</h3>

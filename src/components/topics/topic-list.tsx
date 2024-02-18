@@ -6,6 +6,14 @@ import paths from "@/paths";
 export default async function TopicList() {
   const topics = await db.topic.findMany();
 
+  if (!topics.length) {
+    return (
+      <>
+        <p className="text-purple mt-4">No topics yet!</p>
+        <p className="text-purple">Go ahead and create one 😃</p>
+      </>
+    );
+  }
   const renderedTopics = topics.map((topic) => {
     return (
       <div key={topic.id}>

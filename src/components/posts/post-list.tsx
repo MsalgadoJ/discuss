@@ -27,7 +27,7 @@ export default async function PostList({
     return (
       <div
         key={post.id}
-        className="bg-stone-200 border-1 border-[#F31260] rounded p-2 transition-transform hover:scale-105"
+        className="bg-stone-200 border-1 min-w-[300px] border-[#F31260] rounded p-2 transition-transform hover:scale-105"
       >
         <Link href={paths.postShow(topicSlug, post.id)}>
           <h3 className="text-lg font-bold text-purple">{post.title}</h3>
