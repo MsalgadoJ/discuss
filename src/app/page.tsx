@@ -7,7 +7,7 @@ import ClientAnimation from "@/components/common/client-animation";
 
 export default function Home() {
   return (
-    <div className="container mx-auto w-5/6 pt-4 flex flex-col-reverse justify-end sm:flex-row max-w-[1024px] sm:justify-between gap-4 text-white">
+    <div className="container mx-auto w-5/6 py-4 flex flex-col-reverse justify-end sm:flex-row max-w-[1024px] sm:justify-between gap-4 text-white">
       <div className="col-span-3">
         <ClientAnimation>
           <h1 className="text-xl m-2">Top Posts</h1>

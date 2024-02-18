@@ -2,7 +2,7 @@ import ClientAnimation from "./common/client-animation";
 export default function Footer() {
   return (
     <ClientAnimation type="fadeIn" direction="downUp">
-      <div className="text-stone-200 flex items-center justify-center mx-auto min-h-[30px]">
+      <div className="text-stone-200 flex items-center justify-center mx-auto min-h-[30px] p-3">
         <p className="text-xs text-center">
           Project developed by{" "}
           <a
