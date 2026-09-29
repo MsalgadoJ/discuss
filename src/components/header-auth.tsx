@@ -49,7 +49,12 @@ export default function HeaderAuth() {
 
         <NavbarItem>
           <form action={actions.signIn}>
-            <Button type="submit" color="danger" variant="faded">
+            <Button
+              type="submit"
+              color="danger"
+              variant="faded"
+              className="text-pink-800"
+            >
               Sign Up
             </Button>
           </form>
